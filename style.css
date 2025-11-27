@@ -3,70 +3,103 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    background: linear-gradient(135deg, #111827, #1f2937, #0f172a);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
 }
 
-/* Center Content */
-.container {
+/* Centering */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Calculator Box */
+.calculator {
+    width: 330px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Title */
+.title {
     text-align: center;
-    animation: fadeIn 1.5s ease-in-out;
-}
-
-/* Heading */
-h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-/* Subtitle */
-.subtitle {
-    font-size: 1.2rem;
     margin-bottom: 20px;
-    opacity: 0.85;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
-/* Version text */
-.version {
+/* Screen */
+.screen {
+    background: rgba(255, 255, 255, 0.10);
+    padding: 18px;
+    border-radius: 12px;
+    color: #fff;
+    margin-bottom: 18px;
+    text-align: right;
+}
+
+.history {
     font-size: 0.9rem;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
     opacity: 0.7;
 }
 
-/* Button Design */
-.glow-btn {
-    background: #ffcc00;
-    color: #000;
-    font-size: 1.2rem;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
+.output {
+    font-size: 2rem;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
 }
 
-.glow-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 204, 0, 0.9);
-    background: #ffd633;
+/* Buttons Grid */
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Buttons */
+.btn {
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.08);
+}
+
+/* Operators */
+.op {
+    background: #8b5cf6;
+}
+
+.op:hover {
+    background: #a78bfa;
+}
+
+/* Equal Button */
+.equal {
+    background: #10b981;
+}
+
+.equal:hover {
+    background: #34d399;
+}
+
+/* Zero Button Wide */
+.zero {
+    grid-column: span 2;
 }
